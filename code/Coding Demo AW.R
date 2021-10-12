@@ -38,4 +38,16 @@ plot(x,y,
 abline(fit)
 
 
+# save data ---------------------------------------------------------------
 
+#save.image("./data/my_expensive_calculations.Rdata")
+
+
+
+# load data ---------------------------------------------------------------
+
+#load(file="./data/my_expensive_calculations.Rdata")
+
+
+#getwd()
+#setwd("C:/GIT/I-dont-know-what-to-call-this/code/")
