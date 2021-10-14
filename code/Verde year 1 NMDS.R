@@ -10,7 +10,7 @@ graphics.off()
 # Set WD ------------------------------------------------------------------
 
 
-
+##This sets it to the data file for the analytical workflows class repo
 setwd("C:/GIT/I-dont-know-what-to-call-this/data/")
 
 
