@@ -21,28 +21,28 @@ setwd("C:/GIT/I-dont-know-what-to-call-this/data/")
 
 
 #install.packages("ade4")
-#library(ade4)
+library(ade4)
 #install.packages("vegan")
-#library(vegan) 
+library(vegan) 
 #install.packages("ggplot2")
-#library(ggplot2)
+library(ggplot2)
 #install.packages("raster")
-#library(raster)
+library(raster)
 #install.packages("sp")
-#library(sp)
+library(sp)
 #install.packages("RColorBrewer")
-#library(RColorBrewer)
+library(RColorBrewer)
 #install.packages("gclus")
-#library(gclus)
+library(gclus)
 #install.packages("ape")
-#library(ape)
+library(ape)
 
 
 
 # Bring in data matrices for species and habitat data and prepare them for analyses --------------------------------------------------
 
 ##Species matrix
-verdsp_sp18_sp18<-read.csv("verde_yr1_spring.csv")
+verdsp_sp18<-read.csv("verde_yr1_spring.csv")
 
 #head() shows you the columns and first six rows of the imported
 head(verdsp_sp18)
@@ -54,8 +54,8 @@ dim(verdsp_sp18)
 ##site names will be assigned again later from second matrix. 
 ##This step is necessary for ordinations. Data must only be data without ID/groupings.
 
-#this code subsets columns 2-188, this is the number of species
-spdat_sp18_sp18<-verdsp_sp18[2:118] 
+#this code subsets columns 2-118, this is the number of species
+spdat_sp18<-verdsp_sp18[2:118] 
 
 head(spdat_sp18) # double checks that the correct data was subset
 
@@ -71,7 +71,7 @@ sptrns<-log(spdat_sp18+1)
 #Note: the order of the data in the habitat matrix must match the order of the data 
 ##from the abundance data in order to properly correlate site names and habitat variables#
 
-verdhab_sp18_sp18<-read.csv("verde_hab_yr1_spring.csv")
+verdhab_sp18<-read.csv("verde_hab_yr1_spring.csv")
 
 head(verdhab_sp18)
 
@@ -143,9 +143,10 @@ envscores<-as.data.frame(scores(joint,display="vectors"))
 
 envscores 
 
-##Alternative code using the transformed data if you want to compare 
-#envhab2<-verdhab_sp18[,c(8,11)]
-#joint2<-envfit(NMDS1,envhab2,permutations=999,strata=NULL,choices=c(1,2),scaling="sites")
+##Alternative code using only SIGNIFICANT env variables (less hectic)
+envhab2_spring18<-verdhab_spring[,c(8,11,17,19)]
+joint2_spring18<-envfit(NMDS1_spring,envhab2_spring18,permutations=999,strata=NULL,choices=c(1,2),scaling="sites")
+
 
 
 
