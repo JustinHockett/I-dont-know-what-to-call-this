@@ -7,6 +7,6 @@
 ---
 ## _My Project_
 #### **Main goal:** Link habitat of Verde River to aquatic invertebrate communities 
-#### **Secondary goal:** Find patterns of community composition across different scales (microhabitats, sits, tributaries)
+#### **Secondary goal:** Find patterns of community composition across different scales (microhabitats, sites, tributaries)
 
 
