@@ -5,8 +5,8 @@
 #### The main goal is to get organized and do some analyses for my thesis project
 
 ---
-## _My Project_
-#### **Main goal:** Link habitat of Verde River to aquatic invertebrate communities 
+## _My Thesis Project_
+#### **Main goal:** Figure out how physical attributes of the Verde River influence aquatic invertebrate community structure
 #### **Secondary goal:** Find patterns of community composition across different scales (microhabitats, sites, tributaries)
 
 
