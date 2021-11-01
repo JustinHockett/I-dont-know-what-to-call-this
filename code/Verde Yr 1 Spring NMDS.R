@@ -127,15 +127,21 @@ joint<-envfit(NMDS1,envhab,permutations=999,strata=NULL,choices=c(1,2),scaling="
 ##Not entirely sure what a lot of these unputs do
 #joint<-envfit(NMDS2,verdhab_sp18,permutations=999,strata=NULL,choices=c(1,2),scaling="species")
 
-joint
+
+##check significance of environmental variables
+joint 
+
+
 colnames(joint)
+
 class(joint)
+
 scores(joint,"vectors")
 
 ##Creates a new variable for later use
 envpts<-scores(joint,"vectors")
 
-class(joint)		
+##Not sure what this tells us	
 ordiArrowMul(joint)	
 
 ##this provides the x and y points related to the arrows that will represent correlations of the species/samples
@@ -144,8 +150,8 @@ envscores<-as.data.frame(scores(joint,display="vectors"))
 envscores 
 
 ##Alternative code using only SIGNIFICANT env variables (less hectic)
-envhab2_spring18<-verdhab_spring[,c(8,11,17,19)]
-joint2_spring18<-envfit(NMDS1_spring,envhab2_spring18,permutations=999,strata=NULL,choices=c(1,2),scaling="sites")
+envhab2_spring18<-verdhab_sp18[,c(8,11,17,19)]
+joint2_spring18<-envfit(NMDS1,envhab2_spring18,permutations=999,strata=NULL,choices=c(1,2),scaling="sites")
 
 
 
@@ -168,7 +174,7 @@ co<-c("black", "magenta", "blue")
 ##shape of the individual points (samples) in order as they appear on the matrices, 
 ##specifically the habitat matrix but the order should match the species matrix
 ##We want closed shapes for fall and open shapes for spring, 0,1,2 are the closed versions of 15,16,17
-shape<-c(0,1,2,15,16,17)
+shape<-c(15,16,17)
 
 ##This plots our points using the untransformed data
 plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NMDS1", ylab = "NMDS2")
@@ -191,8 +197,8 @@ plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NM
 ##We are ordering by microhabitat (Micro column of hab matrix), not sure what display does, the border order is based on microhabitat, so riffles, then pools,
 ##then runs (based on Micro column of hab matrix)
 #ordihull(NMDS1, verdhab_sp18$Micro, display= "sites", draw= c("polygon"), 
-#         col=NULL, border=c("magenta", "magenta", "magenta", "black", "black", "black", "blue", "blue", "blue" ) ,
-#        lty= c(1), lwd=2.5) 
+#       col=NULL, border=c("magenta", "magenta", "magenta", "black", "black", "black", "blue", "blue", "blue" ) ,
+#       lty= c(1), lwd=2.5) 
 
 ##Old code
 #ordihull(NMDS2,groups=verdhab_sp18$order,label=FALSE,cex=.6,col=c(17,76,54, 2, 30, 110, 92, 128, 150),draw="polygon",alpha=.05,lty=3)
@@ -230,8 +236,8 @@ plot(joint, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray
 
 ##Add legend and additional text
 ##Make sure that colors and shapes are consistent with what's on the ordination
-txt <- c("Riffle Fall", "Riffle Spring", "Pool Fall", "Pool Spring", "Run Fall", "Run Spring")
-legend('bottomright', txt , pch=c(0,15,1,16,2,17),col=c("magenta","magenta","black","black","blue","blue"),
+txt <- c("Riffle", "Pool", "Run")
+legend('bottomright', txt , pch=c(15,16,17),col=c("magenta","black","blue"),
        cex=1, bty = "y")
 text(-1.2,-.7,pos=1,"Stress=15.86",cex=.9)
 
