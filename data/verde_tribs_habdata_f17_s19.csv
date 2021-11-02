@@ -1,0 +1,127 @@
+Sample,Site,Hab,HabSeason,order,year,Season,flw_avg,flw_var,dpth_avg,Sand,VryFnGvl,FineGvl,MedGvl,CrsGrvl,VyCrsGvl,SmCble,LgCble,SmBlder,MedBldr,LrgBldr
+F17_BFR1,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,1,0,0.46,0.07511,33.4,0,3,2,7,4,12,34,25,10,3,0
+F17_BFR2,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,1,0,0.46,0.07511,33.4,0,3,2,7,4,12,34,25,10,3,0
+F17_BFR3,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,1,0,0.46,0.07511,33.4,0,3,2,7,4,12,34,25,10,3,0
+F17_BFP1,Beasley Flats,Pool,Pool Fall,Pool Fall,2,0,0.05,0.00326,62.9,73,7,1,5,4,2,3,2,3,0,0
+F17_BFP3,Beasley Flats,Pool,Pool Fall,Pool Fall,2,0,0.05,0.00326,62.9,73,7,1,5,4,2,3,2,3,0,0
+F17_BFP4,Beasley Flats,Pool,Pool Fall,Pool Fall,2,0,0.05,0.00326,62.9,73,7,1,5,4,2,3,2,3,0,0
+F17_BFN1,Beasley Flats,Run,Run Fall,Run Fall,3,0,0.54,0.03548,70.8,2,0,4,1,0,5,23,32,19,14,0
+F17_BFN2,Beasley Flats,Run,Run Fall,Run Fall,3,0,0.54,0.03548,70.8,2,0,4,1,0,5,23,32,19,14,0
+F17_BFN5,Beasley Flats,Run,Run Fall,Run Fall,3,0,0.54,0.03548,70.8,2,0,4,1,0,5,23,32,19,14,0
+F17_CHR1,Childs,Riffle,Riffle Fall,Riffle Fall,1,0,0.7,0.12694,34.9,0,0,1,2,2,2,12,20,47,14,0
+F17_CHR2,Childs,Riffle,Riffle Fall,Riffle Fall,1,0,0.7,0.12694,34.9,0,0,1,2,2,2,12,20,47,14,0
+F17_CHR5,Childs,Riffle,Riffle Fall,Riffle Fall,1,0,0.7,0.12694,34.9,0,0,1,2,2,2,12,20,47,14,0
+F17_CHP2,Childs,Pool,Pool Fall,Pool Fall,2,0,0.01,0.0002,35.6,26,31,26,10,2,3,2,0,0,0,0
+F17_CHP3,Childs,Pool,Pool Fall,Pool Fall,2,0,0.01,0.0002,35.6,26,31,26,10,2,3,2,0,0,0,0
+F17_CHP5,Childs,Pool,Pool Fall,Pool Fall,2,0,0.01,0.0002,35.6,26,31,26,10,2,3,2,0,0,0,0
+F17_CHN1,Childs,Run,Run Fall,Run Fall,3,0,0.84,0.04298,72.9,0,1,2,8,22,28,18,9,9,3,0
+F17_CHN2,Childs,Run,Run Fall,Run Fall,3,0,0.84,0.04298,72.9,0,1,2,8,22,28,18,9,9,3,0
+F17_CHN3,Childs,Run,Run Fall,Run Fall,3,0,0.84,0.04298,72.9,0,1,2,8,22,28,18,9,9,3,0
+F17_SBR1,Sheep Bridge,Riffle,Riffle Fall,Riffle Fall,1,0,0.92,0.03375,40.4,2,0,4,1,0,5,23,32,19,14,0
+F17_SBR2,Sheep Bridge,Riffle,Riffle Fall,Riffle Fall,1,0,0.92,0.03375,40.4,2,0,4,1,0,5,23,32,19,14,0
+F17_SBR5,Sheep Bridge,Riffle,Riffle Fall,Riffle Fall,1,0,0.92,0.03375,40.4,2,0,4,1,0,5,23,32,19,14,0
+F17_SBP1,Sheep Bridge,Pool,Pool Fall,Pool Fall,2,0,0,0.00002,63.3,1,3,7,11,8,8,33,25,4,0,0
+F17_SBP3,Sheep Bridge,Pool,Pool Fall,Pool Fall,2,0,0,0.00002,63.3,1,3,7,11,8,8,33,25,4,0,0
+F17_SBP4,Sheep Bridge,Pool,Pool Fall,Pool Fall,2,0,0,0.00002,63.3,1,3,7,11,8,8,33,25,4,0,0
+F17_SBN1,Sheep Bridge,Run,Run Fall,Run Fall,3,0,0.4,0.00539,74.4,0,10,7,3,2,9,29,31,7,2,0
+F17_SBN3,Sheep Bridge,Run,Run Fall,Run Fall,3,0,0.4,0.00539,74.4,0,10,7,3,2,9,29,31,7,2,0
+F17_SBN5,Sheep Bridge,Run,Run Fall,Run Fall,3,0,0.4,0.00539,74.4,0,10,7,3,2,9,29,31,7,2,0
+S18_BFR1,Beasley Flats,Riffle,Riffle Spring,Riffle Spring,4,1,0.64,0.11222,26.2,4,2,5,10,5,11,23,23,15,2,0
+S18_BFR2,Beasley Flats,Riffle,Riffle Spring,Riffle Spring,4,1,0.64,0.11222,26.2,4,2,5,10,5,11,23,23,15,2,0
+S18_BFR3,Beasley Flats,Riffle,Riffle Spring,Riffle Spring,4,1,0.64,0.11222,26.2,4,2,5,10,5,11,23,23,15,2,0
+S18_BFP1,Beasley Flats,Pool,Pool Spring,Pool Spring,5,1,0.01,0.00033,49,71,4,2,1,2,2,2,8,8,0,0
+S18_BFP2,Beasley Flats,Pool,Pool Spring,Pool Spring,5,1,0.01,0.00033,49,71,4,2,1,2,2,2,8,8,0,0
+S18_BFP4,Beasley Flats,Pool,Pool Spring,Pool Spring,5,1,0.01,0.00033,49,71,4,2,1,2,2,2,8,8,0,0
+S18_BFN1,Beasley Flats,Run,Run Spring,Run Spring,6,1,0.55,0.03292,73.2,5,2,6,4,3,5,24,39,12,0,0
+S18_BFN4,Beasley Flats,Run,Run Spring,Run Spring,6,1,0.55,0.03292,73.2,5,2,6,4,3,5,24,39,12,0,0
+S18_BFN5,Beasley Flats,Run,Run Spring,Run Spring,6,1,0.55,0.03292,73.2,5,2,6,4,3,5,24,39,12,0,0
+S18_CHR1,Childs,Riffle,Riffle Spring,Riffle Spring,4,1,0.55,0.13821,35.7,0,0,3,5,6,5,8,26,29,17,1
+S18_CHR2,Childs,Riffle,Riffle Spring,Riffle Spring,4,1,0.55,0.13821,35.7,0,0,3,5,6,5,8,26,29,17,1
+S18_CHR5,Childs,Riffle,Riffle Spring,Riffle Spring,4,1,0.55,0.13821,35.7,0,0,3,5,6,5,8,26,29,17,1
+S18_CHP2,Childs,Pool,Pool Spring,Pool Spring,5,1,0,0.00003,30.4,63,8,12,10,2,3,1,1,0,0,0
+S18_CHP3,Childs,Pool,Pool Spring,Pool Spring,5,1,0,0.00003,30.4,63,8,12,10,2,3,1,1,0,0,0
+S18_CHP5,Childs,Pool,Pool Spring,Pool Spring,5,1,0,0.00003,30.4,63,8,12,10,2,3,1,1,0,0,0
+S18_CHN1,Childs,Run,Run Spring,Run Spring,6,1,0.77,0.02411,69.7,0,3,2,7,21,29,16,12,9,1,0
+S18_CHN2,Childs,Run,Run Spring,Run Spring,6,1,0.77,0.02411,69.7,0,3,2,7,21,29,16,12,9,1,0
+S18_CHN3,Childs,Run,Run Spring,Run Spring,6,1,0.77,0.02411,69.7,0,3,2,7,21,29,16,12,9,1,0
+S18_SBR1,Sheep Bridge,Riffle,Riffle Spring,Riffle Spring,4,1,0.6,0.13778,35.9,0,1,2,2,2,4,17,27,30,13,2
+S18_SBR2,Sheep Bridge,Riffle,Riffle Spring,Riffle Spring,4,1,0.6,0.13778,35.9,0,1,2,2,2,4,17,27,30,13,2
+S18_SBR5,Sheep Bridge,Riffle,Riffle Spring,Riffle Spring,4,1,0.6,0.13778,35.9,0,1,2,2,2,4,17,27,30,13,2
+S18_SBP1,Sheep Bridge,Pool,Pool Spring,Pool Spring,5,1,0.02,0.00041,63.5,32,5,5,9,6,3,13,20,8,0,0
+S18_SBP3,Sheep Bridge,Pool,Pool Spring,Pool Spring,5,1,0.02,0.00041,63.5,32,5,5,9,6,3,13,20,8,0,0
+S18_SBP4,Sheep Bridge,Pool,Pool Spring,Pool Spring,5,1,0.02,0.00041,63.5,32,5,5,9,6,3,13,20,8,0,0
+S18_SBN1,Sheep Bridge,Run,Run Spring,Run Spring,6,1,0.32,0.00145,64.7,12,10,10,3,8,1,16,30,10,0,0
+S18_SBN3,Sheep Bridge,Run,Run Spring,Run Spring,6,1,0.32,0.00145,64.7,12,10,10,3,8,1,16,30,10,0,0
+S18_SBN5,Sheep Bridge,Run,Run Spring,Run Spring,6,1,0.32,0.00145,64.7,12,10,10,3,8,1,16,30,10,0,0
+F18_BFR2,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,7,0,0.66,0.07417,29.95,2,2,4,3,10,3,24,25,24,6,0
+F18_BFR3,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,7,0,0.66,0.07417,29.95,2,2,4,3,10,3,24,25,24,6,0
+F18_BFR5,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,7,0,0.66,0.07417,29.95,2,2,4,3,10,3,24,25,24,6,0
+F18_BFP2,Beasley Flats,Pool,Pool Fall,Pool Fall,8,0,0.01,0.0003,50.45,93,0,0,0,0,0,2,4,2,0,0
+F18_BFP3,Beasley Flats,Pool,Pool Fall,Pool Fall,8,0,0.01,0.0003,50.45,93,0,0,0,0,0,2,4,2,0,0
+F18_BFP4,Beasley Flats,Pool,Pool Fall,Pool Fall,8,0,0.01,0.0003,50.45,93,0,0,0,0,0,2,4,2,0,0
+F18_BFN3,Beasley Flats,Run,Run Fall,Run Fall,9,0,0.77,0.02781,65.75,3,2,2,4,4,4,23,46,15,0,0
+F18_BFN4,Beasley Flats,Run,Run Fall,Run Fall,9,0,0.77,0.02781,65.75,3,2,2,4,4,4,23,46,15,0,0
+F18_BFN5,Beasley Flats,Run,Run Fall,Run Fall,9,0,0.77,0.02781,65.75,3,2,2,4,4,4,23,46,15,0,0
+F18_CHR1,Childs,Riffle,Riffle Fall,Riffle Fall,7,0,0.69,0.10804,40.5,2,2,3,3,6,3,4,27,41,11,1
+F18_CHR4,Childs,Riffle,Riffle Fall,Riffle Fall,7,0,0.69,0.10804,40.5,2,2,3,3,6,3,4,27,41,11,1
+F18_CHR5,Childs,Riffle,Riffle Fall,Riffle Fall,7,0,0.69,0.10804,40.5,2,2,3,3,6,3,4,27,41,11,1
+F18_CHP3,Childs,Pool,Pool Fall,Pool Fall,8,0,0.02,0.0001,35.85,83,6,6,3,3,0,1,0,1,0,0
+F18_CHP4,Childs,Pool,Pool Fall,Pool Fall,8,0,0.02,0.0001,35.85,83,6,6,3,3,0,1,0,1,0,0
+F18_CHP5,Childs,Pool,Pool Fall,Pool Fall,8,0,0.02,0.0001,35.85,83,6,6,3,3,0,1,0,1,0,0
+F18_CHN1,Childs,Run,Run Fall,Run Fall,9,0,0.77,0.0321,76.7,0,4,8,12,26,13,15,10,11,2,0
+F18_CHN3,Childs,Run,Run Fall,Run Fall,9,0,0.77,0.0321,76.7,0,4,8,12,26,13,15,10,11,2,0
+F18_CHN5,Childs,Run,Run Fall,Run Fall,9,0,0.77,0.0321,76.7,0,4,8,12,26,13,15,10,11,2,0
+F18_SBR1,Sheep Bridge,Riffle,Riffle Fall,Riffle Fall,7,0,0.65,0.08139,41.05,4,2,1,0,1,4,8,35,32,15,1
+F18_SBR2,Sheep Bridge,Riffle,Riffle Fall,Riffle Fall,7,0,0.65,0.08139,41.05,4,2,1,0,1,4,8,35,32,15,1
+F18_SBR3,Sheep Bridge,Riffle,Riffle Fall,Riffle Fall,7,0,0.65,0.08139,41.05,4,2,1,0,1,4,8,35,32,15,1
+F18_SBP1,Sheep Bridge,Pool,Pool Fall,Pool Fall,8,0,0.03,0.00051,78.7,47,6,2,6,1,2,9,14,19,1,0
+F18_SBP2,Sheep Bridge,Pool,Pool Fall,Pool Fall,8,0,0.03,0.00051,78.7,47,6,2,6,1,2,9,14,19,1,0
+F18_SBP5,Sheep Bridge,Pool,Pool Fall,Pool Fall,8,0,0.03,0.00051,78.7,47,6,2,6,1,2,9,14,19,1,0
+F18_SBN1,Sheep Bridge,Run,Run Fall,Run Fall,9,0,0.45,0.00212,72.35,5,6,3,4,4,13,20,26,21,2,0
+F18_SBN3,Sheep Bridge,Run,Run Fall,Run Fall,9,0,0.45,0.00212,72.35,5,6,3,4,4,13,20,26,21,2,0
+F18_SBN5,Sheep Bridge,Run,Run Fall,Run Fall,9,0,0.45,0.00212,72.35,5,6,3,4,4,13,20,26,21,2,0
+S19_BFR1,Beasley Flats,Riffle,Riffle Spring,Riffle Spring,10,1,0.5,0.049,27.6,1,3,2,2,4,14,35,22,20,9,0
+S19_BFR2,Beasley Flats,Riffle,Riffle Spring,Riffle Spring,10,1,0.5,0.049,27.6,1,3,2,2,4,14,35,22,20,9,0
+S19_BFR4,Beasley Flats,Riffle,Riffle Spring,Riffle Spring,10,1,0.5,0.049,27.6,1,3,2,2,4,14,35,22,20,9,0
+S19_BFP1,Beasley Flats,Pool,Pool Spring,Pool Spring,11,1,0.01,0.0001,40.25,81,14,1,0,0,0,2,5,0,0,0
+S19_BFP3,Beasley Flats,Pool,Pool Spring,Pool Spring,11,1,0.01,0.0001,40.25,81,14,1,0,0,0,2,5,0,0,0
+S19_BFP5,Beasley Flats,Pool,Pool Spring,Pool Spring,11,1,0.01,0.0001,40.25,81,14,1,0,0,0,2,5,0,0,0
+S19_BFN1,Beasley Flats,Run,Run Spring,Run Spring,12,1,0.5,0.0057,72.1,1,0,2,1,2,20,40,32,6,0,0
+S19_BFN2,Beasley Flats,Run,Run Spring,Run Spring,12,1,0.5,0.0057,72.1,1,0,2,1,2,20,40,32,6,0,0
+S19_BFN3,Beasley Flats,Run,Run Spring,Run Spring,12,1,0.5,0.0057,72.1,1,0,2,1,2,20,40,32,6,0,0
+S19_CHR2,Childs,Riffle,Riffle Spring,Riffle Spring,10,1,0.63,0.07744,33.15,0,0,0,0,3,6,11,30,33,15,5
+S19_CHR3,Childs,Riffle,Riffle Spring,Riffle Spring,10,1,0.63,0.07744,33.15,0,0,0,0,3,6,11,30,33,15,5
+S19_CHR4,Childs,Riffle,Riffle Spring,Riffle Spring,10,1,0.63,0.07744,33.15,0,0,0,0,3,6,11,30,33,15,5
+S19_CHP1,Childs,Pool,Pool Spring,Pool Spring,11,1,0.01,0.00009,46.05,16,6,6,11,18,13,20,9,2,0,0
+S19_CHP2,Childs,Pool,Pool Spring,Pool Spring,11,1,0.01,0.00009,46.05,16,6,6,11,18,13,20,9,2,0,0
+S19_CHP5,Childs,Pool,Pool Spring,Pool Spring,11,1,0.01,0.00009,46.05,16,6,6,11,18,13,20,9,2,0,0
+S19_CHN1,Childs,Run,Run Spring,Run Spring,12,1,0.73,0.01114,65.9,2,0,3,4,11,49,17,8,5,3,0
+S19_CHN2,Childs,Run,Run Spring,Run Spring,12,1,0.73,0.01114,65.9,2,0,3,4,11,49,17,8,5,3,0
+S19_CHN3,Childs,Run,Run Spring,Run Spring,12,1,0.73,0.01114,65.9,2,0,3,4,11,49,17,8,5,3,0
+S19_SBR2,Sheep Bridge,Riffle,Riffle Spring,Riffle Spring,10,1,0.61,0.04951,31.75,2,2,0,0,0,2,16,34,34,10,3
+S19_SBR3,Sheep Bridge,Riffle,Riffle Spring,Riffle Spring,10,1,0.61,0.04951,31.75,2,2,0,0,0,2,16,34,34,10,3
+S19_SBR4,Sheep Bridge,Riffle,Riffle Spring,Riffle Spring,10,1,0.61,0.04951,31.75,2,2,0,0,0,2,16,34,34,10,3
+S19_SBP1,Sheep Bridge,Pool,Pool Spring,Pool Spring,11,1,0.02,0.00014,86.05,78,2,2,2,1,2,6,1,5,1,1
+S19_SBP2,Sheep Bridge,Pool,Pool Spring,Pool Spring,11,1,0.02,0.00014,86.05,78,2,2,2,1,2,6,1,5,1,1
+S19_SBP5,Sheep Bridge,Pool,Pool Spring,Pool Spring,11,1,0.02,0.00014,86.05,78,2,2,2,1,2,6,1,5,1,1
+S19_SBN2,Sheep Bridge,Run,Run Spring,Run Spring,12,1,0.47,0.00537,62.35,17,4,1,1,1,6,14,28,24,6,1
+S19_SBN3,Sheep Bridge,Run,Run Spring,Run Spring,12,1,0.47,0.00537,62.35,17,4,1,1,1,6,14,28,24,6,1
+S19_SBN5,Sheep Bridge,Run,Run Spring,Run Spring,12,1,0.47,0.00537,62.35,17,4,1,1,1,6,14,28,24,6,1
+F19_TCR1,Tangle,Riffle,Riffle Fall,Tangle Riffle,13,0,0.1,0,3.55,30,21,3,5,16,23,10,0,1,0,0
+F19_TCR2,Tangle,Riffle,Riffle Fall,Tangle Riffle,13,0,0.1,0,3.55,30,21,3,5,16,23,10,0,1,0,0
+F19_TCR3,Tangle,Riffle,Riffle Fall,Tangle Riffle,13,0,0.1,0,3.55,30,21,3,5,16,23,10,0,1,0,0
+F19_TCP1,Tangle,Pool,Pool Fall,Tangle Pool,14,0,0,0,33.65,7,56,10,0,1,0,3,11,4,0,12
+F19_TCP2,Tangle,Pool,Pool Fall,Tangle Pool,14,0,0,0,33.65,7,56,10,0,1,0,3,11,4,0,12
+F19_TCP3,Tangle,Pool,Pool Fall,Tangle Pool,14,0,0,0,33.65,7,56,10,0,1,0,3,11,4,0,12
+F19_CCR1,Clear,Riffle,Riffle Fall,Clear Riffle,15,0,0.6755,0.055226053,17.6,1,3,3,5,17,21,25,17,9,1,0
+F19_CCR2,Clear,Riffle,Riffle Fall,Clear Riffle,15,0,0.6755,0.055226053,17.6,1,3,3,5,17,21,25,17,9,1,0
+F19_CCR3,Clear,Riffle,Riffle Fall,Clear Riffle,15,0,0.6755,0.055226053,17.6,1,3,3,5,17,21,25,17,9,1,0
+F19_CCP1,Clear,Pool,Pool Fall,Clear Pool ,16,0,0.026,0.000330526,52.55,3,0,1,1,9,21,32,20,12,4,0
+F19_CCP2,Clear,Pool,Pool Fall,Clear Pool ,16,0,0.026,0.000330526,52.55,3,0,1,1,9,21,32,20,12,4,0
+F19_CCP3,Clear,Pool,Pool Fall,Clear Pool ,16,0,0.026,0.000330526,52.55,3,0,1,1,9,21,32,20,12,4,0
+F19_FCR1,Fossil,Riffle,Riffle Fall,Fossil Riffle ,17,0,0.593,0.067085263,27.8,4,6,4,2,8,14,32,17,7,6,3
+F19_FCR2,Fossil,Riffle,Riffle Fall,Fossil Riffle ,17,0,0.593,0.067085263,27.8,4,6,4,2,8,14,32,17,7,6,3
+F19_FCR3,Fossil,Riffle,Riffle Fall,Fossil Riffle ,17,0,0.593,0.067085263,27.8,4,6,4,2,8,14,32,17,7,6,3
+F19_FCP1,Fossil,Pool,Pool Fall,Fossil Pool ,18,0,0.14,0.043378947,23.1,9,6,1,1,3,4,14,6,20,5,32
+F19_FCP2,Fossil,Pool,Pool Fall,Fossil Pool ,18,0,0.14,0.043378947,23.1,9,6,1,1,3,4,14,6,20,5,32
+F19_FCP3,Fossil,Pool,Pool Fall,Fossil Pool ,18,0,0.14,0.043378947,23.1,9,6,1,1,3,4,14,6,20,5,32
