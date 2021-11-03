@@ -1,6 +1,6 @@
 #### NMDS for Verde Year 1 SPRING ONLY (2018)####
 ##CODE NEEDS TO BE CHECKED FOR ERRORS##
-#Code copied and variables changed from Year 1 NMDS
+##Code copied and variables changed from Year 1 NMDS
 
 # Clear workspace and close all graphics ----------------------------------
 
@@ -54,7 +54,7 @@ dim(verdsp_sp18)
 ##site names will be assigned again later from second matrix. 
 ##This step is necessary for ordinations. Data must only be data without ID/groupings.
 
-#this code subsets columns 2-118, this is the number of species
+##this code subsets columns 2-118, this is the number of species
 spdat_sp18<-verdsp_sp18[2:118] 
 
 head(spdat_sp18) # double checks that the correct data was subset
@@ -105,14 +105,13 @@ NMDS2$stress #provides the lowest stress solution
 stressplot(NMDS2) #creates a plot of distance as a function of dissimilarity and shows the fit of the line	
 
 ##Decide to use NMDS1 or NMDS2. Transformed data has lower column and row variance as well as 
-##results in a lower final stress##	
+##results in a lower final stress
 
 
 
 # Environmental correlations overlay (will be inserted on the ordi --------
 
 
-###Environmental Correlations Overlay##########################	
 
 head(verdhab_sp18)
 
@@ -149,7 +148,7 @@ envscores<-as.data.frame(scores(joint,display="vectors"))
 
 envscores 
 
-##Alternative code using only SIGNIFICANT env variables (less hectic)
+##Alternative code using only SIGNIFICANT env variables (less hectic on the ordination)
 envhab2_spring18<-verdhab_sp18[,c(8,11,17,19)]
 joint2_spring18<-envfit(NMDS1,envhab2_spring18,permutations=999,strata=NULL,choices=c(1,2),scaling="sites")
 
@@ -212,10 +211,11 @@ plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NM
 
 
 ##For untransformed data
-plot(joint, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
+###cex changes size of text
+#plot(joint, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
 
-##For transformed data
-#plot(joint2, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
+##Significant variables only
+plot(joint2_spring18, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE, cex=.8)
 
 ##old code
 #plot(joint,cex=.5,col="black",asp=1,p=0.05,family="serif")

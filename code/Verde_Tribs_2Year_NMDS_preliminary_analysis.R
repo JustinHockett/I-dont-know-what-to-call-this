@@ -1,0 +1,219 @@
+#### NMDS for Verde 2 year dataset with preliminary trib data ####
+##CODE NEEDS TO BE CHECKED FOR ERRORS##
+##Code copied and variables changed from Year 1 NMDS Spring
+
+# Clear workspace and close all graphics ----------------------------------
+
+rm(list=ls())
+graphics.off()
+
+
+# Set WD ------------------------------------------------------------------
+
+
+##This sets it to the data file for the analytical workflows class repo
+setwd("C:/GIT/I-dont-know-what-to-call-this/data/")
+
+
+
+# Download/retrieve necessary packages ------------------------------------
+
+
+
+#install.packages("ade4")
+library(ade4)
+#install.packages("vegan")
+library(vegan) 
+#install.packages("ggplot2")
+library(ggplot2)
+#install.packages("raster")
+library(raster)
+#install.packages("sp")
+library(sp)
+#install.packages("RColorBrewer")
+library(RColorBrewer)
+#install.packages("gclus")
+library(gclus)
+#install.packages("ape")
+library(ape)
+
+
+
+# Bring in data matrices for species and habitat data and prepare them for analyses --------------------------------------------------
+		
+
+verdsp_yr2<-read.csv("verde_tribs_spdata_f17_s19.csv")
+			
+#head() shows you the columns and first six rows of the imported
+head(verdsp_yr2)
+			
+#observe the dimensions of the imported matrix#
+dim(verdsp_yr2) #126 rows by 139 columns#
+		
+##subset the dataframe on which to base the ordination. i.e. subset only the spp data. site names will be assigned again later from second matrix. This step is necessary for ordinations. Data must only be data without ID/groupings.##
+	
+#this code subsets columns 2-139
+spdat_yr2<-verdsp_yr2[,2:139] 
+		
+head(spdat_yr2) # double checks that the correct data was subset
+			
+#LOG(X+1) transform matrix. Will run both to try to obtain lowest stress final solution. For this data it fulfills the requirements to be able to do a log(x+1) transformation which is (lowest number must be 0 or 1 (e.g. cannot be 0.3). This will provide a lower stress solution in the long run#
+		
+sptrns<-log(spdat_yr2+1)
+			
+			
+## Bring in the Habitat Matrix which will provide site names. columns that contains the descriptive/environmental data ##
+	
+#Note: the order of the data in the habitat matrix must match the order of the data from the abundance data in order to properly correlate site names and habitat variables#
+verdhab_yr2<-read.csv("verde_tribs_habdata_f17_s19.csv")
+		
+head(verdhab_yr2)
+			
+colnames(verdhab_yr2)
+			
+dim(verdhab_yr2) #126 rows by 21 columns
+		
+
+# Compare raw data to transformed data to see which has a lower stress --------
+
+##ordination by NMDS with RAW Data. Run this if you only want to view the solutions related to the untransformed data. This data has a higher stress solutionn when compared to the transformed data#
+NMDS1 <- metaMDS(spdat_yr2, distance = "bray", k = 2)
+#head(NMDS1)
+NMDS1$stress
+				
+
+#Function from Vegan --> metaMDS
+#metaMDS(matrix to run NMS, distance metric (here we use Bray-Curtis/Sorensen), k --> seed to start
+
+#ordination by NMDS with log(x+1) transformed Data				
+NMDS2 <- metaMDS(sptrns, distance = "bray", k = 2)
+		
+# R will give you stats on the runs
+			
+head(NMDS2) 
+				
+NMDS2$stress #provides the lowest stress solution
+				
+stressplot(NMDS2) #creates a plot of distance as a function of dissimilarity and shows the fit of the line	
+				
+##Decide to use NMDS1 or NMDS2. Transformed data has lower column and row variance as well as 
+##results in a lower final stress
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+# Environmental correlations overlay (will be inserted on the ordi --------
+
+	
+head(verdhab_yr2)
+
+##extract only the variables we want to measure within the habitat matrix
+envhab_yr2<-verdhab_yr2[,c(7:21)] 
+	
+joint<-envfit(NMDS1,envhab_yr2,permutations=999,strata=NULL,choices=c(1,2),scaling="sites")
+	
+#joint<-envfit(NMDS2,verdhab_yr2,permutations=999,strata=NULL,choices=c(1,2),scaling="species")
+joint
+	
+colnames(joint)
+	
+class(joint)
+	
+scores(joint,"vectors")
+	
+envpts<-scores(joint,"vectors")
+	
+class(joint)		
+	
+ordiArrowMul(joint)	
+	
+	
+envscores<-as.data.frame(scores(joint,display="vectors"))
+#this provides the x and y points related to the arrows that will represent correlations of the species/samples	
+envscores 
+	
+	
+#########################
+
+##Data visualisation for NMDS with all sites (n=126)
+
+#Plot ordination so that points are coloured and shaped according to the groups of interest
+			aspect <- factor(verdhab_yr2$HabSeason)
+			color <- factor(verdhab_yr2$order)
+			co<-c(17, 76, 54, 14, 30, 110, 92, 128, 150)
+			shape<-c(0,15,2,17,1,16)
+			
+#dev.set()
+			
+#jpeg(filename="Lab_NMDS_Verde.jpg",res=600,height=5,width=5,units="in")
+			
+plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=.6,  xlab = "NMDS1", ylab = "NMDS2")
+
+		#Connect the points that belong to the same treatment with ordispider and create convex hulls around sites habitat (riffle, pool, run)
+			#ordispider(NMDS2, groups = verdhab_yr2$Hab,  label = TRUE,cex=.8,col=c(17,76,54))
+			
+			ordihull(NMDS2, verdhab_yr2$order, display= "sites", draw= c("polygon"), col=NULL, border= c(17,76,54, 2, 30, 110, 92, 128, 150), lty= c(1,1,1,1,1,1,2,2,2,2,2,2,1,1,1,1,1,1), lwd=2.5) 
+			
+			
+			ordihull(NMDS2,groups=verdhab_yr2$order,label=FALSE,cex=.6,col=c(17,76,54, 2, 30, 110, 92, 128, 150),draw="polygon",alpha=.05,lty=3)
+
+		#Add joint plot overlay of env correlations. We created this above#
+			
+			#plot(joint,cex=.5,col="black",asp=1,p=0.05,family="serif")
+			
+			
+			plot(joint, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
+			
+			
+			vectorfit(joint)
+		#Rotate ordination so that axis lines up with env variable
+			#MDSrotate(...)
+			
+			
+		#Add legend and additional text
+			txt <- c("Riffle Fall", "Riffle Spring", "Pool Fall", "Pool Spring", "Run Fall", "Run Spring", "Tangle Riffle", "Tangle Pool",
+			         "Clear Riffle", "Clear Pool", "Fossil Riffle", "Fossil Pool")
+			legend('bottomright', txt , pch=c(2,17,0,15,1,16),col=c(76,76,17,17,54,54,2, 30, 110, 92, 128, 150),cex=0.6, bty = "y")
+			text(-.45,-.7,pos=1,"Stress=12.67",cex=.6)
+			
+#dev.off()
+#########################################################################			
+
+
+	
+#########################
+	#####################
+	#Bootstrapping and testing for differences between the groups
+		fit <- adonis(sptrns ~ Hab, data=verdhab_yr2, permutations=999, method="bray")
+		fit
+
+
+#####################
+	#Check assumption of homogeneity of multivariate dispersion
+		distances_data <- vegdist(sptrns)
+		anova(betadisper(distances_data, verdhab_yr2$Hab))		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			
