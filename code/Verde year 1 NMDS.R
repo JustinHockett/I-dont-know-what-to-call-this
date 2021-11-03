@@ -32,7 +32,7 @@ library(sp)
 #install.packages("RColorBrewer")
 library(RColorBrewer)
 #install.packages("cluster")
-#library("cluster")
+library("cluster")
 #install.packages("gclus")
 library(gclus)
 #install.packages("ape")
@@ -118,7 +118,7 @@ stressplot(NMDS2) #creates a plot of distance as a function of dissimilarity and
 head(verdhab)
 
 ##extract only the variables we want to measure within the habitat matrix
-envhab<-verdhab[,c(8:21)] 
+envhab<-verdhab[,c(7:21)] 
 
 ##stores data for use in the ordination, not entirely sure how it works
 ##This is using untransformed data (NMDS1)
@@ -233,7 +233,7 @@ plot(joint, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray
 txt <- c("Riffle Fall", "Riffle Spring", "Pool Fall", "Pool Spring", "Run Fall", "Run Spring")
 legend('bottomright', txt , pch=c(0,15,1,16,2,17),col=c("magenta","magenta","black","black","blue","blue"),
        cex=1, bty = "y")
-text(-1.2,-.7,pos=1,"Stress=15.86",cex=.9)
+#text(-1.2,-.7,pos=1,"Stress=15.86",cex=.9)
 
 
 
