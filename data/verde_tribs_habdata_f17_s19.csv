@@ -1,4 +1,4 @@
-Sample,Site,Hab,HabSeason,order,year,Season,flw_avg,flw_var,dpth_avg,Sand,VryFnGvl,FineGvl,MedGvl,CrsGrvl,VyCrsGvl,SmCble,LgCble,SmBlder,MedBldr,LrgBldr
+Sample,Site,Hab,HabSeason,order,micro.season,Season,flw_avg,flw_var,dpth_avg,Sand,VryFnGvl,FineGvl,MedGvl,CrsGrvl,VyCrsGvl,SmCble,LgCble,SmBlder,MedBldr,LrgBldr
 F17_BFR1,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,1,0,0.46,0.07511,33.4,0,3,2,7,4,12,34,25,10,3,0
 F17_BFR2,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,1,0,0.46,0.07511,33.4,0,3,2,7,4,12,34,25,10,3,0
 F17_BFR3,Beasley Flats,Riffle,Riffle Fall,Riffle Fall,1,0,0.46,0.07511,33.4,0,3,2,7,4,12,34,25,10,3,0

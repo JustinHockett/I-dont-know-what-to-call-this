@@ -139,39 +139,60 @@ envscores<-as.data.frame(scores(joint,display="vectors"))
 envscores 
 	
 	
-#########################
 
-##Data visualisation for NMDS with all sites (n=126)
 
-#Plot ordination so that points are coloured and shaped according to the groups of interest
-			aspect <- factor(verdhab_yr2$HabSeason)
-			color <- factor(verdhab_yr2$order)
-			co<-c(17, 76, 54, 14, 30, 110, 92, 128, 150)
-			shape<-c(0,15,2,17,1,16)
+# Data visualization with NMDS --------------------------------------------
+
+#plot(NMDS1)
+##Tells R how to group the shapes, we want them grouped by microhabitat type and by year, which is how we've ordered the data matrix
+aspect<- factor(verdhab_yr2$micro.season)
+
+##Tells R how we want to color each point, which is by microhabitat type
+color<- factor(verdhab_yr2$micro.season)
+
+##Tells R what specific colors we want. We want to color code by microhabitat
+##In this case, it is aphabetical by habitat type, pool is black, riffle is magenta, and run is blue
+co<-c("black", "magenta", "blue","black", "magenta", "blue","black", "magenta", "blue","black", "magenta", "blue",
+       "red", "red", "brown","brown","green", "green")
+
+##shape of the individual points (samples) in order as they appear on the matrices, 
+##specifically the habitat matrix but the order should match the species matrix
+##We want closed shapes for fall and open shapes for spring, 0,1,2 are the closed versions of 15,16,17
+shape<-c(0,1,2,15,16,17,0,1,2,15,16,17,3,4,3,4,3,4)
+
+##This plots our points using the untransformed data
+plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NMDS1", ylab = "NMDS2")
+
+
+#Plot ordination so that points are colored and shaped according to the groups of interest
+		#	aspect <- factor(verdhab_yr2$HabSeason)
+		#	color <- factor(verdhab_yr2$order)
+	#		co<-c(17, 76, 54, 14, 30, 110, 92, 128, 150)
+		#	shape<-c(0,15,2,17,1,16)
 			
 #dev.set()
 			
 #jpeg(filename="Lab_NMDS_Verde.jpg",res=600,height=5,width=5,units="in")
 			
-plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=.6,  xlab = "NMDS1", ylab = "NMDS2")
+#plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=.9,  xlab = "NMDS1", ylab = "NMDS2")
 
 		#Connect the points that belong to the same treatment with ordispider and create convex hulls around sites habitat (riffle, pool, run)
 			#ordispider(NMDS2, groups = verdhab_yr2$Hab,  label = TRUE,cex=.8,col=c(17,76,54))
 			
-			ordihull(NMDS2, verdhab_yr2$order, display= "sites", draw= c("polygon"), col=NULL, border= c(17,76,54, 2, 30, 110, 92, 128, 150), lty= c(1,1,1,1,1,1,2,2,2,2,2,2,1,1,1,1,1,1), lwd=2.5) 
+			#ordihull(NMDS2, verdhab_yr2$order, display= "sites", draw= c("polygon"), col=NULL, border= c(17,76,54, 2, 30, 110, 92, 128, 150), lty= c(1,1,1,1,1,1,2,2,2,2,2,2,1,1,1,1,1,1), lwd=2.5) 
 			
 			
-			ordihull(NMDS2,groups=verdhab_yr2$order,label=FALSE,cex=.6,col=c(17,76,54, 2, 30, 110, 92, 128, 150),draw="polygon",alpha=.05,lty=3)
+			#ordihull(NMDS2,groups=verdhab_yr2$order,label=FALSE,cex=.6,col=c(17,76,54, 2, 30, 110, 92, 128, 150),draw="polygon",alpha=.05,lty=3)
 
 		#Add joint plot overlay of env correlations. We created this above#
 			
 			#plot(joint,cex=.5,col="black",asp=1,p=0.05,family="serif")
 			
 			
-			plot(joint, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
+		#	plot(joint, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
 			
 			
-			vectorfit(joint)
+		#	vectorfit(joint)
 		#Rotate ordination so that axis lines up with env variable
 			#MDSrotate(...)
 			
@@ -179,8 +200,9 @@ plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=.6,  xlab = "NMD
 		#Add legend and additional text
 			txt <- c("Riffle Fall", "Riffle Spring", "Pool Fall", "Pool Spring", "Run Fall", "Run Spring", "Tangle Riffle", "Tangle Pool",
 			         "Clear Riffle", "Clear Pool", "Fossil Riffle", "Fossil Pool")
-			legend('bottomright', txt , pch=c(2,17,0,15,1,16),col=c(76,76,17,17,54,54,2, 30, 110, 92, 128, 150),cex=0.6, bty = "y")
-			text(-.45,-.7,pos=1,"Stress=12.67",cex=.6)
+			legend('bottomright', txt , pch=c(0,15,1,16,2,17,3,4,3,4,3,4),
+			       col=c("black","black", "magenta","magenta" ,"blue","blue","red", "red", "brown","brown", "green", "green") ,cex=0.9, bty = "y")
+			text(-2,-1.5,pos=1,"Stress=19.02",cex=.9)
 			
 #dev.off()
 #########################################################################			
@@ -190,14 +212,14 @@ plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=.6,  xlab = "NMD
 #########################
 	#####################
 	#Bootstrapping and testing for differences between the groups
-		fit <- adonis(sptrns ~ Hab, data=verdhab_yr2, permutations=999, method="bray")
-		fit
+#		fit <- adonis(sptrns ~ Hab, data=verdhab_yr2, permutations=999, method="bray")
+#		fit
 
 
 #####################
 	#Check assumption of homogeneity of multivariate dispersion
-		distances_data <- vegdist(sptrns)
-		anova(betadisper(distances_data, verdhab_yr2$Hab))		
+	#	distances_data <- vegdist(sptrns)
+	#	anova(betadisper(distances_data, verdhab_yr2$Hab))		
 		
 		
 		
