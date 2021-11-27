@@ -1,6 +1,6 @@
-#### NMDS for Verde 2 year dataset with preliminary trib data ####
+## NMDS for Verde 2 year dataset with preliminary trib data 
 ##CODE NEEDS TO BE CHECKED FOR ERRORS##
-##Code copied and variables changed from Year 1 NMDS Spring
+
 
 # Clear workspace and close all graphics ----------------------------------
 
@@ -79,8 +79,10 @@ dim(verdhab_yr2) #126 rows by 21 columns
 ##ordination by NMDS with RAW Data. Run this if you only want to view the solutions related to the untransformed data. This data has a higher stress solutionn when compared to the transformed data#
 NMDS1 <- metaMDS(spdat_yr2, distance = "bray", k = 2)
 #head(NMDS1)
-NMDS1$stress
-				
+NMDS1$stress #stress=0.19
+
+##creates a plot of distance as a function of dissimilarity and shows the fit of the line	
+stressplot(NMDS1)				
 
 #Function from Vegan --> metaMDS
 #metaMDS(matrix to run NMS, distance metric (here we use Bray-Curtis/Sorensen), k --> seed to start
@@ -91,8 +93,9 @@ NMDS2 <- metaMDS(sptrns, distance = "bray", k = 2)
 # R will give you stats on the runs
 			
 head(NMDS2) 
-				
-NMDS2$stress #provides the lowest stress solution
+		
+##creates a plot of distance as a function of dissimilarity and shows the fit of the line			
+NMDS2$stress #stress=0.1586
 				
 stressplot(NMDS2) #creates a plot of distance as a function of dissimilarity and shows the fit of the line	
 				
@@ -143,32 +146,35 @@ envscores
 
 # Data visualization with NMDS --------------------------------------------
 
-#plot(NMDS1)
 ##Tells R how to group the shapes, we want them grouped by microhabitat type and by year, which is how we've ordered the data matrix
+###micro.season organizes the data into microhabitats by season and by year for the mainstem (fall riffle yr1, fall pool yr1, fall run yr1, spring riffle yr1, spring pool yr1, spring run yr1, fall riffle yr2...)
+###For the tribs it organizes by trib and by microhabitat, since only one season of data is presented (Tangle riffle, tangle pool, west clear riffle, west clear pool, fossil riffle, fossil pool)
 aspect<- factor(verdhab_yr2$micro.season)
 
 ##Tells R how we want to color each point, which is by microhabitat type
 color<- factor(verdhab_yr2$micro.season)
 
 ##Tells R what specific colors we want. We want to color code by microhabitat
-##In this case, it is aphabetical by habitat type, pool is black, riffle is magenta, and run is blue
+###In this case, it is aphabetical by habitat type, pool is black, riffle is magenta, and run is blue
+###For the added tribs, tangle is red, clear is purple, and fossil is green
 co<-c("black", "magenta", "blue","black", "magenta", "blue","black", "magenta", "blue","black", "magenta", "blue",
        "red", "red", "brown","brown","green", "green")
 
 ##shape of the individual points (samples) in order as they appear on the matrices, 
-##specifically the habitat matrix but the order should match the species matrix
-##We want closed shapes for fall and open shapes for spring, 0,1,2 are the closed versions of 15,16,17
+###specifically the habitat matrix but the order should match the species matrix
+###We want closed shapes for fall and closed shapes for spring, 0,1,2 are the open versions of 15,16,17
+####Riffle fall is 0, pool fall is 1, run fall is 2.
+####For the tribs, 3 is riffle and 4 is pool. 
 shape<-c(0,1,2,15,16,17,0,1,2,15,16,17,3,4,3,4,3,4)
 
 ##This plots our points using the untransformed data
 plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NMDS1", ylab = "NMDS2")
 
 
-#Plot ordination so that points are colored and shaped according to the groups of interest
-		#	aspect <- factor(verdhab_yr2$HabSeason)
-		#	color <- factor(verdhab_yr2$order)
-	#		co<-c(17, 76, 54, 14, 30, 110, 92, 128, 150)
-		#	shape<-c(0,15,2,17,1,16)
+# To save a high res file -------------------------------------------------
+
+##Essentially the code above needs to be repeated after dev.set and then dev.off
+##will output the highres file
 			
 #dev.set()
 			
@@ -205,18 +211,22 @@ plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NM
 			text(-2,-1.5,pos=1,"Stress=19.02",cex=.9)
 			
 #dev.off()
-#########################################################################			
+		
 
 
 	
-#########################
-	#####################
-	#Bootstrapping and testing for differences between the groups
+
+# Bootstrapping and testing for differences between groups ----------------
+
+
 #		fit <- adonis(sptrns ~ Hab, data=verdhab_yr2, permutations=999, method="bray")
 #		fit
 
 
-#####################
+
+# Checking assumptions ----------------------------------------------------
+
+
 	#Check assumption of homogeneity of multivariate dispersion
 	#	distances_data <- vegdist(sptrns)
 	#	anova(betadisper(distances_data, verdhab_yr2$Hab))		
