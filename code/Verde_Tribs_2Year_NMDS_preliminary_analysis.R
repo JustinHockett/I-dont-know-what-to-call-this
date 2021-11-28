@@ -1,13 +1,18 @@
 ## NMDS for Verde 2 year dataset with preliminary trib data 
 ##CODE NEEDS TO BE CHECKED FOR ERRORS##
 
-
+---------------------------------------------------------------------------
 # Clear workspace and close all graphics ----------------------------------
 
 rm(list=ls())
 graphics.off()
 
 
+
+
+
+
+---------------------------------------------------------------------------
 # Set WD ------------------------------------------------------------------
 
 
@@ -16,6 +21,9 @@ setwd("C:/GIT/I-dont-know-what-to-call-this/data/")
 
 
 
+
+
+---------------------------------------------------------------------------
 # Download/retrieve necessary packages ------------------------------------
 
 
@@ -39,7 +47,9 @@ library(ape)
 
 
 
-# Bring in data matrices for species and habitat data and prepare them for analyses --------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+# Bring in species data matrix and prepare for analyses --------------------------------------------------
 		
 
 verdsp_yr2<-read.csv("verde_tribs_spdata_f17_s19.csv")
@@ -57,23 +67,32 @@ spdat_yr2<-verdsp_yr2[,2:139]
 		
 head(spdat_yr2) # double checks that the correct data was subset
 			
-#LOG(X+1) transform matrix. Will run both to try to obtain lowest stress final solution. For this data it fulfills the requirements to be able to do a log(x+1) transformation which is (lowest number must be 0 or 1 (e.g. cannot be 0.3). This will provide a lower stress solution in the long run#
+##LOG(X+1) transform matrix. Will run both to try to obtain lowest stress final solution. For this data it fulfills the requirements to be able to do a log(x+1) transformation which is (lowest number must be 0 or 1 (e.g. cannot be 0.3).
+##This will provide a lower stress solution in the long run#
 		
 sptrns<-log(spdat_yr2+1)
 			
-			
-## Bring in the Habitat Matrix which will provide site names. columns that contains the descriptive/environmental data ##
+
+
+
+
+----------------------------------------------------------------------
+#  Bring in the Habitat Matrix which will provide site names. --------
 	
-#Note: the order of the data in the habitat matrix must match the order of the data from the abundance data in order to properly correlate site names and habitat variables#
+##Note: the order of the data in the habitat matrix must match the order of the data from the abundance data in order to properly correlate site names and habitat variables#
 verdhab_yr2<-read.csv("verde_tribs_habdata_f17_s19.csv")
 		
 head(verdhab_yr2)
 			
 colnames(verdhab_yr2)
 			
-dim(verdhab_yr2) #126 rows by 21 columns
-		
+dim(verdhab_yr2) ##126 rows by 21 columns
 
+
+
+
+		
+-------------------------------------------------------------------------------
 # Compare raw data to transformed data to see which has a lower stress --------
 
 ##ordination by NMDS with RAW Data. Run this if you only want to view the solutions related to the untransformed data. This data has a higher stress solutionn when compared to the transformed data#
@@ -110,7 +129,7 @@ stressplot(NMDS2) #creates a plot of distance as a function of dissimilarity and
 			
 			
 			
-			
+---------------------------------------------------------------------------			
 # Environmental correlations overlay (will be inserted on the ordi --------
 
 	
@@ -144,6 +163,8 @@ envscores
 	
 
 
+
+---------------------------------------------------------------------------
 # Data visualization with NMDS --------------------------------------------
 
 ##Tells R how to group the shapes, we want them grouped by microhabitat type and by year, which is how we've ordered the data matrix
@@ -171,6 +192,31 @@ shape<-c(0,1,2,15,16,17,0,1,2,15,16,17,3,4,3,4,3,4)
 plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NMDS1", ylab = "NMDS2")
 
 
+#Add legend and additional text
+
+
+txt <- c("Riffle Fall", "Riffle Spring", "Pool Fall", "Pool Spring", "Run Fall", "Run Spring", "Tangle Riffle", "Tangle Pool",
+         "Clear Riffle", "Clear Pool", "Fossil Riffle", "Fossil Pool")
+
+
+legend('bottomright', txt , pch=c(0,15,1,16,2,17,3,4,3,4,3,4),
+       col=c("black","black", "magenta","magenta" ,"blue","blue","red", "red", "brown","brown", "green", "green") ,cex=0.9, bty = "y")
+
+
+text(-2,-1.5,pos=1,"Stress=.1902",cex=.9)
+
+
+
+
+
+
+
+
+
+
+###OLD CODE BELOW... BEWARE ###
+
+---------------------------------------------------------------------------
 # To save a high res file -------------------------------------------------
 
 ##Essentially the code above needs to be repeated after dev.set and then dev.off
@@ -204,11 +250,11 @@ plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NM
 			
 			
 		#Add legend and additional text
-			txt <- c("Riffle Fall", "Riffle Spring", "Pool Fall", "Pool Spring", "Run Fall", "Run Spring", "Tangle Riffle", "Tangle Pool",
-			         "Clear Riffle", "Clear Pool", "Fossil Riffle", "Fossil Pool")
-			legend('bottomright', txt , pch=c(0,15,1,16,2,17,3,4,3,4,3,4),
-			       col=c("black","black", "magenta","magenta" ,"blue","blue","red", "red", "brown","brown", "green", "green") ,cex=0.9, bty = "y")
-			text(-2,-1.5,pos=1,"Stress=19.02",cex=.9)
+		#	txt <- c("Riffle Fall", "Riffle Spring", "Pool Fall", "Pool Spring", "Run Fall", "Run Spring", "Tangle Riffle", "Tangle Pool",
+	#		         "Clear Riffle", "Clear Pool", "Fossil Riffle", "Fossil Pool")
+	#		legend('bottomright', txt , pch=c(0,15,1,16,2,17,3,4,3,4,3,4),
+		#	       col=c("black","black", "magenta","magenta" ,"blue","blue","red", "red", "brown","brown", "green", "green") ,cex=0.9, bty = "y")
+		#	text(-2,-1.5,pos=1,"Stress=19.02",cex=.9)
 			
 #dev.off()
 		
