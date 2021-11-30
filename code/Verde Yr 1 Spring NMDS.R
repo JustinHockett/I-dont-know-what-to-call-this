@@ -195,9 +195,9 @@ plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NM
 
 ##We are ordering by microhabitat (Micro column of hab matrix), not sure what display does, the border order is based on microhabitat, so riffles, then pools,
 ##then runs (based on Micro column of hab matrix)
-#ordihull(NMDS1, verdhab_sp18$Micro, display= "sites", draw= c("polygon"), 
-#       col=NULL, border=c("magenta", "magenta", "magenta", "black", "black", "black", "blue", "blue", "blue" ) ,
-#       lty= c(1), lwd=2.5) 
+ordihull(NMDS1, verdhab_sp18$Micro, display= "sites", draw= c("polygon"), 
+      col=NULL, border=c("magenta", "magenta", "magenta", "black", "black", "black", "blue", "blue", "blue" ) ,
+       lty= c(1), lwd=2.5) 
 
 ##Old code
 #ordihull(NMDS2,groups=verdhab_sp18$order,label=FALSE,cex=.6,col=c(17,76,54, 2, 30, 110, 92, 128, 150),draw="polygon",alpha=.05,lty=3)

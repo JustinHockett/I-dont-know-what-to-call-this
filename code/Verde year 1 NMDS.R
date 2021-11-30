@@ -144,9 +144,9 @@ envscores<-as.data.frame(scores(joint,display="vectors"))
 
 envscores 
 
-##Alternative code using the transformed data if you want to compare 
-#envhab2<-verdhab[,c(8,11)]
-#joint2<-envfit(NMDS1,envhab2,permutations=999,strata=NULL,choices=c(1,2),scaling="sites")
+##Alternative code using env variables with R^2 > 0.5
+envhab2<-verdhab[,c(7,8,11)]
+joint2<-envfit(NMDS1,envhab2,permutations=999,strata=NULL,choices=c(1,2),scaling="sites")
 
 
 
@@ -205,8 +205,8 @@ plot(NMDS1$points, col=co[color],asp=1,pch = shape[aspect], cex=1.2,  xlab = "NM
 
 
 
-##For untransformed data
-plot(joint, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
+##For env overlay
+plot(joint2, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
 
 ##For transformed data
 #plot(joint2, choices = c(1,2), at = c(0,0),axis = FALSE, p.max = 0.05, col ="gray40", add = TRUE,cex=.5)
