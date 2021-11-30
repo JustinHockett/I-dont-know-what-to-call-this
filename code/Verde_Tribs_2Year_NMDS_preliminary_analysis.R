@@ -1,7 +1,7 @@
 ## NMDS for Verde 2 year dataset with preliminary trib data 
 
 
----------------------------------------------------------------------------
+
 # Clear workspace and close all graphics ----------------------------------
 
 rm(list=ls())
@@ -12,7 +12,7 @@ graphics.off()
 
 
 
----------------------------------------------------------------------------
+
 # Set WD ------------------------------------------------------------------
 
 
@@ -23,7 +23,7 @@ setwd("C:/GIT/I-dont-know-what-to-call-this/data/")
 
 
 
----------------------------------------------------------------------------
+
 # Download/retrieve necessary packages ------------------------------------
 
 
@@ -48,7 +48,7 @@ library(ape)
 
 
 
-----------------------------------------------------------------------------------------------------------
+
 # Bring in species data matrix and prepare for analyses --------------------------------------------------
 		
 
@@ -76,7 +76,7 @@ sptrns<-log(spdat_yr2+1)
 
 
 
-----------------------------------------------------------------------
+
 #  Bring in the Habitat Matrix which will provide site names. --------
 	
 ##Note: the order of the data in the habitat matrix must match the order of the data from the abundance data in order to properly correlate site names and habitat variables#
@@ -92,7 +92,7 @@ dim(verdhab_yr2) ##126 rows by 21 columns
 
 
 		
--------------------------------------------------------------------------------
+
 # Compare raw data to transformed data to see which has a lower stress --------
 
 ##ordination by NMDS with RAW Data. Run this if you only want to view the solutions related to the untransformed data. This data has a higher stress solutionn when compared to the transformed data#
@@ -129,7 +129,7 @@ stressplot(NMDS2) #creates a plot of distance as a function of dissimilarity and
 			
 			
 			
----------------------------------------------------------------------------			
+
 # Environmental correlations overlay (will be inserted on the ordi --------
 
 	
@@ -164,7 +164,7 @@ envscores
 
 
 
----------------------------------------------------------------------------
+
 # Data visualization with NMDS --------------------------------------------
 
 ##Tells R how to group the shapes, we want them grouped by microhabitat type and by year, which is how we've ordered the data matrix
